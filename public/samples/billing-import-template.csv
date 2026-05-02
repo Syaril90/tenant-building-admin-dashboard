@@ -1,0 +1,4 @@
+resident_code,unit_code,billing_type,amount,due_date,description,reference
+RES-A1208-2026,A-12-08,Maintenance,220.00,2026-05-05,April 2026 maintenance charges,APR-MTN-A1208
+,B-04-11,Water,72.00,2026-05-05,March 2026 metered water bill,APR-WTR-B0411
+RES-A1208-FAM,A-12-08,Access Card Deposit,50.00,2026-05-10,Replacement access card deposit,APR-CRD-A1208

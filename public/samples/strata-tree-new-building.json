@@ -1,0 +1,95 @@
+{
+  "tree": [
+    {
+      "id": "building-lakeview-residences-b",
+      "type": "building",
+      "name": "Lakeview Residences Tower B",
+      "code": "BLD-LVB",
+      "status": "New residential tower",
+      "countsLabel": "2 areas • 4 units",
+      "documentsExpected": [
+        "Master strata plan",
+        "CCC certificate",
+        "Fire compliance certificate"
+      ],
+      "children": [
+        {
+          "id": "area-b-south-wing",
+          "type": "area",
+          "name": "South Wing",
+          "code": "AREA-B-SW",
+          "status": "Floors 1 to 8",
+          "countsLabel": "2 units",
+          "documentsExpected": [
+            "Area layout plan",
+            "Mechanical services drawing"
+          ],
+          "children": [
+            {
+              "id": "unit-b-03-01",
+              "type": "unit",
+              "name": "Unit B-03-01",
+              "code": "B-03-01",
+              "status": "Ready for owner onboarding",
+              "countsLabel": "2 records expected",
+              "documentsExpected": [
+                "SPA / title",
+                "Resident registration form"
+              ]
+            },
+            {
+              "id": "unit-b-03-02",
+              "type": "unit",
+              "name": "Unit B-03-02",
+              "code": "B-03-02",
+              "status": "Ready for tenant onboarding",
+              "countsLabel": "2 records expected",
+              "documentsExpected": [
+                "Tenancy agreement",
+                "Resident registration form"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "area-b-north-wing",
+          "type": "area",
+          "name": "North Wing",
+          "code": "AREA-B-NW",
+          "status": "Floors 9 to 16",
+          "countsLabel": "2 units",
+          "documentsExpected": [
+            "Area layout plan",
+            "Renovation control checklist"
+          ],
+          "children": [
+            {
+              "id": "unit-b-12-01",
+              "type": "unit",
+              "name": "Unit B-12-01",
+              "code": "B-12-01",
+              "status": "Vacant",
+              "countsLabel": "2 records expected",
+              "documentsExpected": [
+                "Vacancy checklist",
+                "Meter handover form"
+              ]
+            },
+            {
+              "id": "unit-b-12-02",
+              "type": "unit",
+              "name": "Unit B-12-02",
+              "code": "B-12-02",
+              "status": "Reserved",
+              "countsLabel": "2 records expected",
+              "documentsExpected": [
+                "Booking form",
+                "Purchaser registration pack"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

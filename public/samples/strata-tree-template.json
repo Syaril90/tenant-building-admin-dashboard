@@ -1,0 +1,135 @@
+{
+  "tree": [
+    {
+      "id": "building-serene-heights-a",
+      "type": "building",
+      "name": "Serene Heights Tower A",
+      "code": "BLD-A",
+      "status": "Residential tower",
+      "countsLabel": "2 areas • 4 units",
+      "documentsExpected": [
+        "Master strata plan",
+        "Fire compliance certificate"
+      ],
+      "children": [
+        {
+          "id": "area-a-low-zone",
+          "type": "area",
+          "name": "Low Zone",
+          "code": "AREA-A-LZ",
+          "status": "Floors 1 to 5",
+          "countsLabel": "2 units",
+          "documentsExpected": [
+            "Area layout plan",
+            "Shared maintenance report"
+          ],
+          "children": [
+            {
+              "id": "unit-a-01-01",
+              "type": "unit",
+              "name": "Unit A-01-01",
+              "code": "A-01-01",
+              "status": "Owner occupied",
+              "countsLabel": "2 records expected",
+              "documentsExpected": [
+                "SPA / title",
+                "Resident registration form"
+              ]
+            },
+            {
+              "id": "unit-a-01-02",
+              "type": "unit",
+              "name": "Unit A-01-02",
+              "code": "A-01-02",
+              "status": "Tenanted",
+              "countsLabel": "2 records expected",
+              "documentsExpected": [
+                "Tenancy agreement",
+                "Resident registration form"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "area-a-mid-zone",
+          "type": "area",
+          "name": "Mid Zone",
+          "code": "AREA-A-MZ",
+          "status": "Floors 6 to 10",
+          "countsLabel": "2 units",
+          "documentsExpected": [
+            "Area layout plan",
+            "Renovation zone checklist"
+          ],
+          "children": [
+            {
+              "id": "unit-a-08-01",
+              "type": "unit",
+              "name": "Unit A-08-01",
+              "code": "A-08-01",
+              "status": "Vacant",
+              "countsLabel": "2 records expected",
+              "documentsExpected": [
+                "Vacancy checklist",
+                "Meter handover form"
+              ]
+            },
+            {
+              "id": "unit-a-08-02",
+              "type": "unit",
+              "name": "Unit A-08-02",
+              "code": "A-08-02",
+              "status": "Owner occupied",
+              "countsLabel": "2 records expected",
+              "documentsExpected": [
+                "SPA / title",
+                "Resident registration form"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "building-retail-podium",
+      "type": "building",
+      "name": "Retail Podium",
+      "code": "BLD-P",
+      "status": "Mixed-use block",
+      "countsLabel": "1 area • 1 unit",
+      "documentsExpected": [
+        "Podium operating permit",
+        "Shared utility plan"
+      ],
+      "children": [
+        {
+          "id": "area-p-east-wing",
+          "type": "area",
+          "name": "East Wing",
+          "code": "AREA-P-EW",
+          "status": "Commercial frontage",
+          "countsLabel": "1 unit",
+          "documentsExpected": [
+            "Shoplot zoning plan",
+            "Signage approval"
+          ],
+          "children": [
+            {
+              "id": "unit-p-g-03",
+              "type": "unit",
+              "name": "Unit P-G-03",
+              "code": "P-G-03",
+              "status": "F&B tenant",
+              "countsLabel": "3 records expected",
+              "documentsExpected": [
+                "Tenancy agreement",
+                "Business license",
+                "Fit-out approval"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
