@@ -21,6 +21,12 @@ const DocumentsRoute = lazy(() =>
   })),
 );
 
+const DocumentRequestsRoute = lazy(() =>
+  import("./routes/document-requests-route").then((module) => ({
+    default: module.DocumentRequestsRoute,
+  })),
+);
+
 const VisitorsRoute = lazy(() =>
   import("./routes/visitors-route").then((module) => ({
     default: module.VisitorsRoute,
@@ -64,6 +70,7 @@ const routeMeta: Array<{
   { id: "visitors", label: "Visitors", eyebrow: "Access Control", group: "operations" },
   { id: "approvals", label: "Approvals", eyebrow: "Resident Records", group: "operations" },
   { id: "documents", label: "Documents", eyebrow: "Repository", group: "records" },
+  { id: "documentRequests", label: "Document Requests", eyebrow: "Resident Requests", group: "records" },
   { id: "billing", label: "Billing Import", eyebrow: "Finance Ops", group: "records" },
   { id: "strata", label: "Building Setup", eyebrow: "Asset Structure", group: "records" },
   { id: "access", label: "Admin Access", eyebrow: "System", group: "system" },
@@ -149,6 +156,14 @@ export function TenantDashboardPage() {
                 isLoading={dashboardQuery.isLoading}
                 documentsAdmin={dashboardQuery.data?.documentsAdmin}
                 strata={dashboardQuery.data?.strata}
+                sections={activePage?.sections ?? []}
+              />
+            </Suspense>
+          ) : route === "documentRequests" ? (
+            <Suspense fallback={<RouteLoadingPanel />}>
+              <DocumentRequestsRoute
+                isLoading={dashboardQuery.isLoading}
+                documentsAdmin={dashboardQuery.data?.documentsAdmin}
                 sections={activePage?.sections ?? []}
               />
             </Suspense>

@@ -92,26 +92,29 @@ export function DocumentsRoute({
       return;
     }
 
-    createDocumentAdminMutation.mutate({
-      title,
-      description,
-      categoryId: uploadForm.categoryId,
-      buildingCode: uploadForm.buildingCode || undefined,
-      file: uploadForm.file,
-    }, {
-      onSuccess: (nextDocument) => {
-        setSelectedDocumentId(nextDocument.id);
-        setIsUploadModalOpen(false);
-        setUploadForm({
-          title: "",
-          description: "",
-          categoryId: categories[0]?.id ?? "",
-          buildingCode: "",
-          file: null,
-          fileName: "",
-        });
+    createDocumentAdminMutation.mutate(
+      {
+        title,
+        description,
+        categoryId: uploadForm.categoryId,
+        buildingCode: uploadForm.buildingCode || undefined,
+        file: uploadForm.file,
+      },
+      {
+        onSuccess: (nextDocument) => {
+          setSelectedDocumentId(nextDocument.id);
+          setIsUploadModalOpen(false);
+          setUploadForm({
+            title: "",
+            description: "",
+            categoryId: categories[0]?.id ?? "",
+            buildingCode: "",
+            file: null,
+            fileName: "",
+          });
+        },
       }
-    });
+    );
   }
 
   return (
@@ -137,17 +140,15 @@ export function DocumentsRoute({
               </p>
             </div>
 
-            <div className="flex flex-wrap gap-3">
-              {selectedDocument.fileUrl ? (
-                <a
-                  href={selectedDocument.fileUrl}
-                  download={selectedDocument.title}
-                  className="inline-flex rounded-pill border border-brand-900 bg-brand-900 px-4 py-2 text-sm font-semibold text-white"
-                >
-                  Download File
-                </a>
-              ) : null}
-            </div>
+            {selectedDocument.fileUrl ? (
+              <a
+                href={selectedDocument.fileUrl}
+                download={selectedDocument.title}
+                className="inline-flex rounded-pill border border-brand-900 bg-brand-900 px-4 py-2 text-sm font-semibold text-white"
+              >
+                Download File
+              </a>
+            ) : null}
           </div>
         </DashboardModal>
       ) : null}
@@ -285,6 +286,12 @@ export function DocumentsRoute({
               >
                 Upload Document
               </button>
+              <a
+                href="#/documentRequests"
+                className="inline-flex rounded-pill border border-border-100 bg-white px-4 py-2 text-sm font-semibold text-ink-700"
+              >
+                Open Request Queue
+              </a>
               <input
                 value={query}
                 onChange={(event) => setQuery(event.target.value)}

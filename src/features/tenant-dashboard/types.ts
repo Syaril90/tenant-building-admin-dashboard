@@ -56,6 +56,7 @@ export type TenantDashboardPages = {
   billing: TenantDashboardPageData;
   visitors: TenantDashboardPageData;
   documents: TenantDashboardPageData;
+  documentRequests: TenantDashboardPageData;
   support: TenantDashboardPageData;
   feedback: TenantDashboardPageData;
   announcements: TenantDashboardPageData;
@@ -69,6 +70,7 @@ export type TenantDashboardRoute =
   | "billing"
   | "visitors"
   | "documents"
+  | "documentRequests"
   | "support"
   | "feedback"
   | "announcements"
@@ -244,15 +246,59 @@ export type DocumentsFile = {
   fileUrl?: string;
 };
 
+export type DocumentRequestStatus = "submitted" | "in_review" | "fulfilled" | "rejected";
+
+export type DocumentRequestAttachment = {
+  id: string;
+  title: string;
+  meta: string;
+  type: "image" | "document";
+  fileUrl?: string;
+  uploadedBy: "resident" | "admin";
+};
+
+export type DocumentRequestTimelineItem = {
+  id: string;
+  title: string;
+  description: string;
+  timestamp: string;
+  isCurrent?: boolean;
+};
+
+export type DocumentRequestItem = {
+  id: string;
+  reference: string;
+  residentName: string;
+  residentCode: string;
+  buildingCode: string;
+  buildingName: string;
+  unitCode: string;
+  requestTypeId: string;
+  requestTypeLabel: string;
+  preferredFormatId: string;
+  preferredFormatLabel: string;
+  purpose: string;
+  notes: string;
+  status: DocumentRequestStatus;
+  latestComment: string;
+  submittedAt: string;
+  updatedAt: string;
+  attachments: DocumentRequestAttachment[];
+  timeline: DocumentRequestTimelineItem[];
+};
+
 export type DocumentsAdmin = {
   title: string;
   description: string;
   searchPlaceholder: string;
   uploadTitle: string;
   uploadDescription: string;
+  helperTitle: string;
+  helperDescription: string;
   categories: DocumentsCategory[];
   repository: DocumentsRepository;
   items: DocumentsFile[];
+  requests: DocumentRequestItem[];
 };
 
 export type VisitorApprovalStatus = "pending" | "approved" | "rejected";

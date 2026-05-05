@@ -284,26 +284,6 @@ export const tenantDashboardData: TenantDashboard = {
       description: "Management-owned building documents, circulars, and downloadable reference files.",
       sections: [
         {
-          id: "requests",
-          title: "Document Requests",
-          description: "The request form entry and request queue should live here.",
-          ctaLabel: "Request document",
-          items: [
-            {
-              id: "statement",
-              title: "Account Statement",
-              description: "Requested monthly statement for loan documentation.",
-              meta: "Submitted • 24 Apr 2026"
-            },
-            {
-              id: "residence-letter",
-              title: "Residence Confirmation Letter",
-              description: "Pending management preparation and signature.",
-              meta: "In progress"
-            }
-          ]
-        },
-        {
           id: "library",
           title: "Available Files",
           description: "Skeleton list of downloadable files and previews.",
@@ -319,6 +299,32 @@ export const tenantDashboardData: TenantDashboard = {
               title: "Renovation Form",
               description: "Template for renovation approval submission.",
               meta: "DOCX • 220 KB"
+            }
+          ]
+        }
+      ]
+    },
+    documentRequests: {
+      title: "Document Requests",
+      description: "Review resident-submitted requests, attach prepared files, and keep the progress trail visible.",
+      sections: [
+        {
+          id: "request-policy",
+          title: "Request Workflow",
+          description: "Every request should move with a visible status note and clear final delivery evidence.",
+          items: [
+            {
+              id: "request-flow-1",
+              title: "Acknowledge new requests quickly",
+              description: "Residents should see when management has started reviewing a request.",
+              meta: "Queue discipline"
+            },
+            {
+              id: "request-flow-2",
+              title: "Attach the final file on fulfilment",
+              description: "Prepared letters, statements, and supporting records should be uploaded before closing the request.",
+              meta: "Delivery proof",
+              tone: "brand"
             }
           ]
         }
@@ -630,6 +636,8 @@ export const tenantDashboardData: TenantDashboard = {
     searchPlaceholder: "Find a specific file...",
     uploadTitle: "Upload Document",
     uploadDescription: "Add a document, assign a category, and provide the resident-facing description shown in the web and mobile repository.",
+    helperTitle: "Document Request Review",
+    helperDescription: "Review resident-submitted document requests, attach prepared files, leave an audit comment, and update the request status.",
     categories: [
       {
         id: "house-rules",
@@ -665,6 +673,7 @@ export const tenantDashboardData: TenantDashboard = {
         actions: "ACTIONS"
       }
     },
+    requests: [],
     items: [
       {
         id: "renovation-guidelines-2026",

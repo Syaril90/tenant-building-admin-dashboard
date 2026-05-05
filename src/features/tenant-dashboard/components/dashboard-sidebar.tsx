@@ -177,6 +177,11 @@ function SidebarIcon({ route }: { route: TenantDashboardRoute }) {
         <path d="M7 4h7l4 4v11a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1Zm7 1.5V9h3.5" />
       </SvgIcon>
     ),
+    documentRequests: (
+      <SvgIcon>
+        <path d="M7 4h10a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1Zm2 4h6m-6 4h6m-6 4h4" />
+      </SvgIcon>
+    ),
     billing: (
       <SvgIcon>
         <path d="M6 7.5h12M6 12h12M6 16.5h7M5 4h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1Z" />

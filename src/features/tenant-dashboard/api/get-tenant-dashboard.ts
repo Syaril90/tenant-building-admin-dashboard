@@ -108,6 +108,10 @@ type DocumentsAPIResponse = {
   items: DocumentsItemAPIItem[];
 };
 
+type DocumentRequestsAPIResponse = {
+  items: TenantDashboard["documentsAdmin"]["requests"];
+};
+
 type VisitorRequestsAPIResponse = {
   items: TenantDashboard["visitorAdmin"]["approvals"];
 };
@@ -123,6 +127,7 @@ export async function getTenantDashboard() {
     billingResponse,
     announcementsResponse,
     documentsResponse,
+    documentRequestsResponse,
     complaintsResponse,
     feedbackResponse,
     visitorRequestsResponse,
@@ -132,6 +137,7 @@ export async function getTenantDashboard() {
     fetch(`${baseURL}/api/v1/billing/admin/tree`),
     fetch(`${baseURL}/api/v1/announcements`),
     fetch(`${baseURL}/api/v1/admin/documents`),
+    fetch(`${baseURL}/api/v1/admin/document-requests`),
     fetch(`${baseURL}/api/v1/admin/complaints`),
     fetch(`${baseURL}/api/v1/admin/feedback`),
     fetch(`${baseURL}/api/v1/admin/visitor-requests`),
@@ -143,6 +149,7 @@ export async function getTenantDashboard() {
     !billingResponse.ok ||
     !announcementsResponse.ok ||
     !documentsResponse.ok ||
+    !documentRequestsResponse.ok ||
     !complaintsResponse.ok ||
     !feedbackResponse.ok ||
     !visitorRequestsResponse.ok ||
@@ -157,6 +164,8 @@ export async function getTenantDashboard() {
     items: TenantDashboard["announcementAdmin"]["items"];
   };
   const documentsPayload = (await documentsResponse.json()) as DocumentsAPIResponse;
+  const documentRequestsPayload =
+    (await documentRequestsResponse.json()) as DocumentRequestsAPIResponse;
   const complaintsPayload = (await complaintsResponse.json()) as {
     items: ComplaintAPIItem[];
   };
@@ -186,7 +195,8 @@ export async function getTenantDashboard() {
         description: category.description,
         featured: category.featured
       })),
-      items: documentsPayload.items
+      items: documentsPayload.items,
+      requests: documentRequestsPayload.items
     },
     visitorAdmin: {
       ...tenantDashboardData.visitorAdmin,
